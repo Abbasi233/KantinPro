@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grupIslemler = new DevExpress.XtraEditors.GroupControl();
             this.tableIslemler = new System.Windows.Forms.TableLayoutPanel();
             this.btnRaporlama = new DevExpress.XtraEditors.SimpleButton();
@@ -51,14 +50,10 @@
             this.btnMinimize = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grupIslemler)).BeginInit();
-            this.grupIslemler.SuspendLayout();
             this.tableIslemler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grupKategoriler)).BeginInit();
-            this.grupKategoriler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grupUrunler)).BeginInit();
-            this.grupUrunler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grupHesap)).BeginInit();
-            this.grupHesap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwHesap)).BeginInit();
             this.grupToplamTutar.SuspendLayout();
             this.mainTableLayout.SuspendLayout();
@@ -71,7 +66,7 @@
             this.grupIslemler.Dock = System.Windows.Forms.DockStyle.Top;
             this.grupIslemler.Location = new System.Drawing.Point(0, 53);
             this.grupIslemler.Name = "grupIslemler";
-            this.grupIslemler.Size = new System.Drawing.Size(1224, 120);
+            this.grupIslemler.Size = new System.Drawing.Size(1413, 120);
             this.grupIslemler.TabIndex = 4;
             this.grupIslemler.Text = "İŞLEMLER";
             // 
@@ -96,7 +91,7 @@
             this.tableIslemler.Name = "tableIslemler";
             this.tableIslemler.RowCount = 1;
             this.tableIslemler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableIslemler.Size = new System.Drawing.Size(1220, 95);
+            this.tableIslemler.Size = new System.Drawing.Size(1409, 95);
             this.tableIslemler.TabIndex = 0;
             // 
             // btnRaporlama
@@ -105,9 +100,9 @@
             this.btnRaporlama.Appearance.Options.UseFont = true;
             this.btnRaporlama.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRaporlama.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnRaporlama.Location = new System.Drawing.Point(247, 3);
+            this.btnRaporlama.Location = new System.Drawing.Point(283, 3);
             this.btnRaporlama.Name = "btnRaporlama";
-            this.btnRaporlama.Size = new System.Drawing.Size(116, 89);
+            this.btnRaporlama.Size = new System.Drawing.Size(134, 89);
             this.btnRaporlama.TabIndex = 5;
             this.btnRaporlama.Text = "RAPORLAMA";
             // 
@@ -120,7 +115,7 @@
             this.btnTanimlama.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnTanimlama.Location = new System.Drawing.Point(3, 3);
             this.btnTanimlama.Name = "btnTanimlama";
-            this.btnTanimlama.Size = new System.Drawing.Size(116, 89);
+            this.btnTanimlama.Size = new System.Drawing.Size(134, 89);
             this.btnTanimlama.TabIndex = 3;
             this.btnTanimlama.Text = "TANIMLAMA\r\nİŞLEMLERİ";
             this.btnTanimlama.Click += new System.EventHandler(this.btnTanimlama_Click);
@@ -132,9 +127,9 @@
             this.btnBakiye.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBakiye.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBakiye.ImageOptions.Image")));
             this.btnBakiye.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnBakiye.Location = new System.Drawing.Point(125, 3);
+            this.btnBakiye.Location = new System.Drawing.Point(143, 3);
             this.btnBakiye.Name = "btnBakiye";
-            this.btnBakiye.Size = new System.Drawing.Size(116, 89);
+            this.btnBakiye.Size = new System.Drawing.Size(134, 89);
             this.btnBakiye.TabIndex = 4;
             this.btnBakiye.Text = "BAKİYE \r\nSORGULA";
             // 
@@ -148,7 +143,7 @@
             this.grupKategoriler.GroupStyle = DevExpress.Utils.GroupStyle.Title;
             this.grupKategoriler.Location = new System.Drawing.Point(3, 3);
             this.grupKategoriler.Name = "grupKategoriler";
-            this.grupKategoriler.Size = new System.Drawing.Size(147, 421);
+            this.grupKategoriler.Size = new System.Drawing.Size(171, 489);
             this.grupKategoriler.TabIndex = 10;
             this.grupKategoriler.Text = "KATEGORİLER";
             // 
@@ -171,7 +166,7 @@
             this.tableKategoriler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableKategoriler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableKategoriler.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableKategoriler.Size = new System.Drawing.Size(147, 389);
+            this.tableKategoriler.Size = new System.Drawing.Size(171, 457);
             this.tableKategoriler.TabIndex = 0;
             // 
             // grupUrunler
@@ -179,9 +174,9 @@
             this.grupUrunler.CaptionImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("grupUrunler.CaptionImageOptions.SvgImage")));
             this.grupUrunler.Controls.Add(this.flowUrunler);
             this.grupUrunler.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grupUrunler.Location = new System.Drawing.Point(156, 3);
+            this.grupUrunler.Location = new System.Drawing.Point(180, 3);
             this.grupUrunler.Name = "grupUrunler";
-            this.grupUrunler.Size = new System.Drawing.Size(685, 421);
+            this.grupUrunler.Size = new System.Drawing.Size(792, 489);
             this.grupUrunler.TabIndex = 11;
             this.grupUrunler.Text = "ÜRÜNLER";
             // 
@@ -191,7 +186,7 @@
             this.flowUrunler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowUrunler.Location = new System.Drawing.Point(2, 33);
             this.flowUrunler.Name = "flowUrunler";
-            this.flowUrunler.Size = new System.Drawing.Size(681, 386);
+            this.flowUrunler.Size = new System.Drawing.Size(788, 454);
             this.flowUrunler.TabIndex = 0;
             // 
             // grupHesap
@@ -201,9 +196,9 @@
             this.grupHesap.Controls.Add(this.grupToplamTutar);
             this.grupHesap.Controls.Add(this.btnOdeme);
             this.grupHesap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grupHesap.Location = new System.Drawing.Point(847, 3);
+            this.grupHesap.Location = new System.Drawing.Point(978, 3);
             this.grupHesap.Name = "grupHesap";
-            this.grupHesap.Size = new System.Drawing.Size(374, 421);
+            this.grupHesap.Size = new System.Drawing.Size(432, 489);
             this.grupHesap.TabIndex = 10;
             this.grupHesap.Text = "HESAP ÖDEME";
             // 
@@ -217,14 +212,6 @@
             this.dgwHesap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwHesap.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgwHesap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwHesap.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgwHesap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwHesap.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgwHesap.Location = new System.Drawing.Point(2, 33);
@@ -233,7 +220,7 @@
             this.dgwHesap.RowHeadersVisible = false;
             this.dgwHesap.RowTemplate.Height = 50;
             this.dgwHesap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgwHesap.Size = new System.Drawing.Size(370, 199);
+            this.dgwHesap.Size = new System.Drawing.Size(428, 267);
             this.dgwHesap.TabIndex = 4;
             this.dgwHesap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwHesap_CellContentClick);
             // 
@@ -242,9 +229,9 @@
             this.grupToplamTutar.Controls.Add(this.labelTutar);
             this.grupToplamTutar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grupToplamTutar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.grupToplamTutar.Location = new System.Drawing.Point(2, 232);
+            this.grupToplamTutar.Location = new System.Drawing.Point(2, 300);
             this.grupToplamTutar.Name = "grupToplamTutar";
-            this.grupToplamTutar.Size = new System.Drawing.Size(370, 100);
+            this.grupToplamTutar.Size = new System.Drawing.Size(428, 100);
             this.grupToplamTutar.TabIndex = 3;
             this.grupToplamTutar.TabStop = false;
             this.grupToplamTutar.Text = "TOPLAM TUTAR:";
@@ -253,7 +240,7 @@
             // 
             this.labelTutar.AutoSize = true;
             this.labelTutar.Font = new System.Drawing.Font("DS-Digital", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTutar.Location = new System.Drawing.Point(88, 38);
+            this.labelTutar.Location = new System.Drawing.Point(161, 36);
             this.labelTutar.Name = "labelTutar";
             this.labelTutar.Size = new System.Drawing.Size(111, 47);
             this.labelTutar.TabIndex = 2;
@@ -266,9 +253,9 @@
             this.btnOdeme.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnOdeme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOdeme.ImageOptions.Image")));
             this.btnOdeme.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnOdeme.Location = new System.Drawing.Point(2, 332);
+            this.btnOdeme.Location = new System.Drawing.Point(2, 400);
             this.btnOdeme.Name = "btnOdeme";
-            this.btnOdeme.Size = new System.Drawing.Size(370, 87);
+            this.btnOdeme.Size = new System.Drawing.Size(428, 87);
             this.btnOdeme.TabIndex = 0;
             this.btnOdeme.Text = "ÖDEME AL";
             // 
@@ -286,7 +273,7 @@
             this.mainTableLayout.Name = "mainTableLayout";
             this.mainTableLayout.RowCount = 1;
             this.mainTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainTableLayout.Size = new System.Drawing.Size(1224, 427);
+            this.mainTableLayout.Size = new System.Drawing.Size(1413, 495);
             this.mainTableLayout.TabIndex = 13;
             // 
             // topPanel
@@ -300,7 +287,7 @@
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
             this.topPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.topPanel.Size = new System.Drawing.Size(1224, 53);
+            this.topPanel.Size = new System.Drawing.Size(1413, 53);
             this.topPanel.TabIndex = 12;
             // 
             // labelBaslik
@@ -343,7 +330,7 @@
             this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMinimize.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.ImageOptions.Image")));
             this.btnMinimize.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMinimize.Location = new System.Drawing.Point(1046, 10);
+            this.btnMinimize.Location = new System.Drawing.Point(1235, 10);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnMinimize.Size = new System.Drawing.Size(84, 33);
@@ -356,7 +343,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
             this.btnClose.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnClose.Location = new System.Drawing.Point(1130, 10);
+            this.btnClose.Location = new System.Drawing.Point(1319, 10);
             this.btnClose.Name = "btnClose";
             this.btnClose.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnClose.Size = new System.Drawing.Size(84, 33);
@@ -371,7 +358,7 @@
             this.Appearance.Options.UseTextOptions = true;
             this.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1224, 600);
+            this.ClientSize = new System.Drawing.Size(1413, 668);
             this.Controls.Add(this.mainTableLayout);
             this.Controls.Add(this.grupIslemler);
             this.Controls.Add(this.topPanel);
@@ -391,14 +378,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AnaMenu_FormClosed);
             this.Load += new System.EventHandler(this.AnaMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grupIslemler)).EndInit();
-            this.grupIslemler.ResumeLayout(false);
             this.tableIslemler.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grupKategoriler)).EndInit();
-            this.grupKategoriler.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grupUrunler)).EndInit();
-            this.grupUrunler.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grupHesap)).EndInit();
-            this.grupHesap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwHesap)).EndInit();
             this.grupToplamTutar.ResumeLayout(false);
             this.grupToplamTutar.PerformLayout();

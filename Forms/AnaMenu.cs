@@ -72,12 +72,12 @@ namespace KantinPro
                 {
                     SimpleButton btnUrun = new SimpleButton();
                     btnUrun.Name = "btnUrun" + urun.ID;
-                    btnUrun.Text = urun.URUN_ADI;
+                    btnUrun.Text = urun.URUN_ADI + "\n" + urun.BIRIM_FIYATI.Format() + " ₺";
                     btnUrun.ShowToolTips = false;
                     btnUrun.ToolTip = urun.ID.ToString();
                     btnUrun.Font = new Font("Trebuchet MS", 14);
                     btnUrun.Size = new Size(200, 100);
-                    btnUrun.Click += btnUrun_Click;
+                    btnUrun.Click += Urun_Click;
                     flowUrunler.Controls.Add(btnUrun);
                 }
             }
@@ -87,38 +87,62 @@ namespace KantinPro
             }
         }
 
-        private void btnUrun_Click(object sender, EventArgs e)
+        private void Urun_Click(object sender, EventArgs e)
         {
             SimpleButton button = sender as SimpleButton;
             URUNLER urun = listUrunler.Where(x => x.ID.ToString() == button.ToolTip).FirstOrDefault();
             listHesap.Add(new UrunKaydi(urun.URUN_ADI, urun.BIRIM_FIYATI, 1));
 
+            DataGridDuzenle();
+            LabelTutarGuncelle();
+        }
+
+        private void DataGridDuzenle()
+        {
             dgwHesap.Columns.Clear();
             dgwHesap.DataSource = null;
             dgwHesap.DataSource = listHesap;
 
-            dgwHesap.Columns.Insert(2, artirColumn);
-            dgwHesap.Columns.Insert(4, eksiltColumn);
+            dgwHesap.Columns.Insert(3, artirColumn);
+            dgwHesap.Columns.Insert(5, eksiltColumn);
 
-            dgwHesap.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgwHesap.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void LabelTutarGuncelle()
+        {
+            decimal ToplamTutar = listHesap.Sum(x => x.ToplamFiyat);
+            labelTutar.Text = ToplamTutar.Format() + " ₺";
         }
 
         private void dgwHesap_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                string selectedValue = senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                if (selectedValue == "+")
+                try
                 {
-                    listHesap[e.RowIndex].Adet++;
-                    listHesap[e.RowIndex].Fiyat = listHesap[e.RowIndex].Adet * listHesap[e.RowIndex].Fiyat;
+                    string selectedValue = senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    if (selectedValue == "+")
+                        listHesap[e.RowIndex].Adet++;
+                    else if (selectedValue == "-")
+                    {
+                        if (listHesap[e.RowIndex].Adet > 1)
+                            listHesap[e.RowIndex].Adet--;
+                        else
+                            listHesap.RemoveAt(e.RowIndex);
+                    }
 
-                    dgwHesap.DataSource = null;
-                    dgwHesap.DataSource = listHesap;
+                    if (listHesap.Count > 0)
+                        listHesap[e.RowIndex].ToplamFiyat = listHesap[e.RowIndex].Adet * listHesap[e.RowIndex].BirimFiyat;
 
+                    DataGridDuzenle();
+                    LabelTutarGuncelle();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -149,13 +173,15 @@ namespace KantinPro
     class UrunKaydi
     {
         public string Isim { get; set; }
-        public decimal Fiyat { get; set; }
+        public decimal BirimFiyat { get; set; }
+        public decimal ToplamFiyat { get; set; }
         public int Adet { get; set; }
 
-        public UrunKaydi(String Isim, decimal Fiyat, int Adet)
+        public UrunKaydi(string Isim, decimal BirimFiyat, int Adet)
         {
             this.Isim = Isim;
-            this.Fiyat = Fiyat;
+            this.BirimFiyat = BirimFiyat;
+            this.ToplamFiyat = Adet * BirimFiyat;
             this.Adet = Adet;
         }
     }
