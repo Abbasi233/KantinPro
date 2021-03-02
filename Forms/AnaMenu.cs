@@ -6,15 +6,16 @@ using System.Collections.Generic;
 using DevExpress.XtraEditors;
 
 using KantinPro.Database;
+using KantinPro.Forms;
 
 namespace KantinPro
 {
     public partial class AnaMenu : XtraForm
     {
         KantinProDataContext db;
-        List<KATEGORILER> listKategoriler;
         List<URUNLER> listUrunler;
         List<UrunKaydi> listHesap;
+        List<KATEGORILER> listKategoriler;
         DataGridViewButtonColumn artirColumn;
         DataGridViewButtonColumn eksiltColumn;
 
@@ -54,7 +55,18 @@ namespace KantinPro
                 tableKategoriler.Controls.Add(btnKategori);
             }
         }
+        
+        private void AnaMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult sonuc = MessageBox.Show("Uygulamayı kapatmak istiyor musunuz?", "Çıkış", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            e.Cancel = (sonuc == DialogResult.Cancel);
+        }
 
+        private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+        
         private void btnKategori_Click(object sender, EventArgs e)
         {
             SimpleButton kategori = sender as SimpleButton;
@@ -123,19 +135,25 @@ namespace KantinPro
             {
                 try
                 {
+                    bool itemRemoved = false;
                     string selectedValue = senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    UrunKaydi urunKaydi = listHesap[e.RowIndex];
+
                     if (selectedValue == "+")
-                        listHesap[e.RowIndex].Adet++;
+                        urunKaydi.Adet++;
                     else if (selectedValue == "-")
                     {
-                        if (listHesap[e.RowIndex].Adet > 1)
-                            listHesap[e.RowIndex].Adet--;
+                        if (urunKaydi.Adet > 1)
+                            urunKaydi.Adet--;
                         else
-                            listHesap.RemoveAt(e.RowIndex);
+                        {
+                            listHesap.Remove(urunKaydi);
+                            itemRemoved = true;
+                        }
                     }
 
-                    if (listHesap.Count > 0)
-                        listHesap[e.RowIndex].ToplamFiyat = listHesap[e.RowIndex].Adet * listHesap[e.RowIndex].BirimFiyat;
+                    if (listHesap.Count > 0 && !itemRemoved)
+                        urunKaydi.ToplamFiyat = urunKaydi.Adet * urunKaydi.BirimFiyat;
 
                     DataGridDuzenle();
                     LabelTutarGuncelle();
@@ -147,17 +165,6 @@ namespace KantinPro
             }
         }
 
-        private void AnaMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult sonuc = MessageBox.Show("Uygulamayı kapatmak istiyor musunuz?", "Çıkış", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            e.Cancel = (sonuc == DialogResult.Cancel);
-        }
-
-        private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -167,6 +174,15 @@ namespace KantinPro
         {
             Islemler islemler = new Islemler();
             islemler.Show();
+        }
+
+        private void btnOdeme_Click(object sender, EventArgs e)
+        {
+            if (listHesap.Count > 0)
+            {
+                Odeme odeme = new Odeme(labelTutar.Text);
+                odeme.Show();
+            }
         }
     }
 

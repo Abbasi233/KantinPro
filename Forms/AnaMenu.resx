@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="grupIslemler.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="btnRaporlama.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>137, 17</value>
-  </metadata>
-  <metadata name="btnTanimlama.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>266, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnTanimlama.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -173,9 +164,6 @@
         gg==
 </value>
   </data>
-  <metadata name="btnBakiye.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 17</value>
-  </metadata>
   <data name="btnBakiye.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACZ0RVh0VGl0
@@ -224,9 +212,6 @@
         qy3lS/H/Rm5QvyqWfPjLAcv+Bd859emhr0AKAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="grupKategoriler.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>501, 17</value>
-  </metadata>
   <assembly alias="DevExpress.Data.v20.1" name="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="grupKategoriler.CaptionImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -257,9 +242,6 @@
         Pg0KICAgIDwvZz4NCiAgPC9nPg0KPC9zdmc+Cw==
 </value>
   </data>
-  <metadata name="grupUrunler.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>638, 17</value>
-  </metadata>
   <data name="grupUrunler.CaptionImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIwLjEsIFZlcnNpb249MjAuMS4z
@@ -281,9 +263,6 @@
         di0yaDR2LTRoMnY0aDR2MkgyNnoiIGNsYXNzPSJHcmVlbiIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
 </value>
   </data>
-  <metadata name="grupHesap.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>756, 17</value>
-  </metadata>
   <data name="grupHesap.CaptionImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIwLjEsIFZlcnNpb249MjAuMS4z
@@ -318,9 +297,6 @@
         eiIgY2xhc3M9IkdyZWVuIiAvPg0KPC9zdmc+Cw==
 </value>
   </data>
-  <metadata name="btnOdeme.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>867, 17</value>
-  </metadata>
   <data name="btnOdeme.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -361,12 +337,6 @@
         t50u7K/oVYySYB+nKDo16Ur3bwwnvY5RIryY9Rfw9QTcHxcOclAl7kcyAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="labelBaslik.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>977, 17</value>
-  </metadata>
-  <metadata name="simpleButton2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1085, 17</value>
-  </metadata>
   <data name="simpleButton2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAEd0RVh0VGl0
@@ -413,9 +383,6 @@
         HwfCfwHSAT5FTWiQ2wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="btnMinimize.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1215, 17</value>
-  </metadata>
   <data name="btnMinimize.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABp0RVh0VGl0
@@ -463,9 +430,6 @@
         AzIX4bNMm0EgAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="btnClose.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1335, 17</value>
-  </metadata>
   <data name="btnClose.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACN0RVh0VGl0
