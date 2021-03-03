@@ -33,22 +33,22 @@ namespace KantinPro.Database
     partial void InsertISLEMLER(ISLEMLER instance);
     partial void UpdateISLEMLER(ISLEMLER instance);
     partial void DeleteISLEMLER(ISLEMLER instance);
-    partial void InsertOGRENCILER(OGRENCILER instance);
-    partial void UpdateOGRENCILER(OGRENCILER instance);
-    partial void DeleteOGRENCILER(OGRENCILER instance);
-    partial void InsertKULLANICILAR(KULLANICILAR instance);
-    partial void UpdateKULLANICILAR(KULLANICILAR instance);
-    partial void DeleteKULLANICILAR(KULLANICILAR instance);
     partial void InsertKATEGORILER(KATEGORILER instance);
     partial void UpdateKATEGORILER(KATEGORILER instance);
     partial void DeleteKATEGORILER(KATEGORILER instance);
+    partial void InsertKULLANICILAR(KULLANICILAR instance);
+    partial void UpdateKULLANICILAR(KULLANICILAR instance);
+    partial void DeleteKULLANICILAR(KULLANICILAR instance);
+    partial void InsertOGRENCILER(OGRENCILER instance);
+    partial void UpdateOGRENCILER(OGRENCILER instance);
+    partial void DeleteOGRENCILER(OGRENCILER instance);
     partial void InsertURUNLER(URUNLER instance);
     partial void UpdateURUNLER(URUNLER instance);
     partial void DeleteURUNLER(URUNLER instance);
     #endregion
 		
 		public KantinProDataContext() : 
-				base(global::KantinPro.Properties.Settings.Default.KantinProConnectionString, mappingSource)
+				base(global::KantinPro.Properties.Settings.Default.KantinProConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -85,11 +85,11 @@ namespace KantinPro.Database
 			}
 		}
 		
-		public System.Data.Linq.Table<OGRENCILER> OGRENCILER
+		public System.Data.Linq.Table<KATEGORILER> KATEGORILER
 		{
 			get
 			{
-				return this.GetTable<OGRENCILER>();
+				return this.GetTable<KATEGORILER>();
 			}
 		}
 		
@@ -101,11 +101,11 @@ namespace KantinPro.Database
 			}
 		}
 		
-		public System.Data.Linq.Table<KATEGORILER> KATEGORILER
+		public System.Data.Linq.Table<OGRENCILER> OGRENCILER
 		{
 			get
 			{
-				return this.GetTable<KATEGORILER>();
+				return this.GetTable<OGRENCILER>();
 			}
 		}
 		
@@ -126,13 +126,15 @@ namespace KantinPro.Database
 		
 		private int _ID;
 		
+		private int _ISLEM_YAPAN_ID;
+		
 		private int _OGRENCI_ID;
 		
 		private int _URUN_ID;
 		
 		private int _ADET;
 		
-		private double _TOPLAM;
+		private decimal _TOPLAM;
 		
 		private System.DateTime _ISLEM_TARIHI;
 		
@@ -142,13 +144,15 @@ namespace KantinPro.Database
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
+    partial void OnISLEM_YAPAN_IDChanging(int value);
+    partial void OnISLEM_YAPAN_IDChanged();
     partial void OnOGRENCI_IDChanging(int value);
     partial void OnOGRENCI_IDChanged();
     partial void OnURUN_IDChanging(int value);
     partial void OnURUN_IDChanged();
     partial void OnADETChanging(int value);
     partial void OnADETChanged();
-    partial void OnTOPLAMChanging(double value);
+    partial void OnTOPLAMChanging(decimal value);
     partial void OnTOPLAMChanged();
     partial void OnISLEM_TARIHIChanging(System.DateTime value);
     partial void OnISLEM_TARIHIChanged();
@@ -175,6 +179,26 @@ namespace KantinPro.Database
 					this._ID = value;
 					this.SendPropertyChanged("ID");
 					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISLEM_YAPAN_ID", DbType="Int NOT NULL")]
+		public int ISLEM_YAPAN_ID
+		{
+			get
+			{
+				return this._ISLEM_YAPAN_ID;
+			}
+			set
+			{
+				if ((this._ISLEM_YAPAN_ID != value))
+				{
+					this.OnISLEM_YAPAN_IDChanging(value);
+					this.SendPropertyChanging();
+					this._ISLEM_YAPAN_ID = value;
+					this.SendPropertyChanged("ISLEM_YAPAN_ID");
+					this.OnISLEM_YAPAN_IDChanged();
 				}
 			}
 		}
@@ -239,8 +263,8 @@ namespace KantinPro.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOPLAM", DbType="Float NOT NULL")]
-		public double TOPLAM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOPLAM", DbType="Money NOT NULL")]
+		public decimal TOPLAM
 		{
 			get
 			{
@@ -300,19 +324,15 @@ namespace KantinPro.Database
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OGRENCILER")]
-	public partial class OGRENCILER : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KATEGORILER")]
+	public partial class KATEGORILER : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private string _CARD_ID;
-		
-		private string _OGRENCI_ADI;
-		
-		private string _OGRENCI_SOYADI;
+		private string _KATEGORI_ADI;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -320,15 +340,11 @@ namespace KantinPro.Database
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnCARD_IDChanging(string value);
-    partial void OnCARD_IDChanged();
-    partial void OnOGRENCI_ADIChanging(string value);
-    partial void OnOGRENCI_ADIChanged();
-    partial void OnOGRENCI_SOYADIChanging(string value);
-    partial void OnOGRENCI_SOYADIChanged();
+    partial void OnKATEGORI_ADIChanging(string value);
+    partial void OnKATEGORI_ADIChanged();
     #endregion
 		
-		public OGRENCILER()
+		public KATEGORILER()
 		{
 			OnCreated();
 		}
@@ -353,62 +369,22 @@ namespace KantinPro.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CARD_ID", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string CARD_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KATEGORI_ADI", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string KATEGORI_ADI
 		{
 			get
 			{
-				return this._CARD_ID;
+				return this._KATEGORI_ADI;
 			}
 			set
 			{
-				if ((this._CARD_ID != value))
+				if ((this._KATEGORI_ADI != value))
 				{
-					this.OnCARD_IDChanging(value);
+					this.OnKATEGORI_ADIChanging(value);
 					this.SendPropertyChanging();
-					this._CARD_ID = value;
-					this.SendPropertyChanged("CARD_ID");
-					this.OnCARD_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OGRENCI_ADI", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string OGRENCI_ADI
-		{
-			get
-			{
-				return this._OGRENCI_ADI;
-			}
-			set
-			{
-				if ((this._OGRENCI_ADI != value))
-				{
-					this.OnOGRENCI_ADIChanging(value);
-					this.SendPropertyChanging();
-					this._OGRENCI_ADI = value;
-					this.SendPropertyChanged("OGRENCI_ADI");
-					this.OnOGRENCI_ADIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OGRENCI_SOYADI", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string OGRENCI_SOYADI
-		{
-			get
-			{
-				return this._OGRENCI_SOYADI;
-			}
-			set
-			{
-				if ((this._OGRENCI_SOYADI != value))
-				{
-					this.OnOGRENCI_SOYADIChanging(value);
-					this.SendPropertyChanging();
-					this._OGRENCI_SOYADI = value;
-					this.SendPropertyChanged("OGRENCI_SOYADI");
-					this.OnOGRENCI_SOYADIChanged();
+					this._KATEGORI_ADI = value;
+					this.SendPropertyChanged("KATEGORI_ADI");
+					this.OnKATEGORI_ADIChanged();
 				}
 			}
 		}
@@ -568,15 +544,21 @@ namespace KantinPro.Database
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KATEGORILER")]
-	public partial class KATEGORILER : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OGRENCILER")]
+	public partial class OGRENCILER : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private string _KATEGORI_ADI;
+		private string _CARD_ID;
+		
+		private string _OGRENCI_ADI;
+		
+		private string _OGRENCI_SOYADI;
+		
+		private decimal _BAKIYE;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -584,11 +566,17 @@ namespace KantinPro.Database
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnKATEGORI_ADIChanging(string value);
-    partial void OnKATEGORI_ADIChanged();
+    partial void OnCARD_IDChanging(string value);
+    partial void OnCARD_IDChanged();
+    partial void OnOGRENCI_ADIChanging(string value);
+    partial void OnOGRENCI_ADIChanged();
+    partial void OnOGRENCI_SOYADIChanging(string value);
+    partial void OnOGRENCI_SOYADIChanged();
+    partial void OnBAKIYEChanging(decimal value);
+    partial void OnBAKIYEChanged();
     #endregion
 		
-		public KATEGORILER()
+		public OGRENCILER()
 		{
 			OnCreated();
 		}
@@ -613,22 +601,82 @@ namespace KantinPro.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KATEGORI_ADI", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
-		public string KATEGORI_ADI
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CARD_ID", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string CARD_ID
 		{
 			get
 			{
-				return this._KATEGORI_ADI;
+				return this._CARD_ID;
 			}
 			set
 			{
-				if ((this._KATEGORI_ADI != value))
+				if ((this._CARD_ID != value))
 				{
-					this.OnKATEGORI_ADIChanging(value);
+					this.OnCARD_IDChanging(value);
 					this.SendPropertyChanging();
-					this._KATEGORI_ADI = value;
-					this.SendPropertyChanged("KATEGORI_ADI");
-					this.OnKATEGORI_ADIChanged();
+					this._CARD_ID = value;
+					this.SendPropertyChanged("CARD_ID");
+					this.OnCARD_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OGRENCI_ADI", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string OGRENCI_ADI
+		{
+			get
+			{
+				return this._OGRENCI_ADI;
+			}
+			set
+			{
+				if ((this._OGRENCI_ADI != value))
+				{
+					this.OnOGRENCI_ADIChanging(value);
+					this.SendPropertyChanging();
+					this._OGRENCI_ADI = value;
+					this.SendPropertyChanged("OGRENCI_ADI");
+					this.OnOGRENCI_ADIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OGRENCI_SOYADI", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string OGRENCI_SOYADI
+		{
+			get
+			{
+				return this._OGRENCI_SOYADI;
+			}
+			set
+			{
+				if ((this._OGRENCI_SOYADI != value))
+				{
+					this.OnOGRENCI_SOYADIChanging(value);
+					this.SendPropertyChanging();
+					this._OGRENCI_SOYADI = value;
+					this.SendPropertyChanged("OGRENCI_SOYADI");
+					this.OnOGRENCI_SOYADIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BAKIYE", DbType="Money NOT NULL")]
+		public decimal BAKIYE
+		{
+			get
+			{
+				return this._BAKIYE;
+			}
+			set
+			{
+				if ((this._BAKIYE != value))
+				{
+					this.OnBAKIYEChanging(value);
+					this.SendPropertyChanging();
+					this._BAKIYE = value;
+					this.SendPropertyChanged("BAKIYE");
+					this.OnBAKIYEChanged();
 				}
 			}
 		}

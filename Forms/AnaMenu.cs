@@ -172,7 +172,8 @@ namespace KantinPro
 
         private void btnTanimlama_Click(object sender, EventArgs e)
         {
-            Islemler islemler = new Islemler();
+            Enabled = false;
+            Islemler islemler = new Islemler(this);
             islemler.Show();
         }
 
@@ -180,7 +181,8 @@ namespace KantinPro
         {
             if (listHesap.Count > 0)
             {
-                Odeme odeme = new Odeme(labelTutar.Text);
+                Enabled = false;
+                Odeme odeme = new Odeme(this, labelTutar.Text);
                 odeme.Show();
             }
         }

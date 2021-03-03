@@ -55,9 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\KantinPro.cs">
-      <DependentUpon>KantinPro.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Database\KantinPro.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

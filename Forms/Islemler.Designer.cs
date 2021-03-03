@@ -58,9 +58,7 @@ namespace KantinPro
             this.sidePanel1.SuspendLayout();
             this.sidePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelOgrenciler)).BeginInit();
-            this.panelOgrenciler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpFilter)).BeginInit();
-            this.grpFilter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.grpSurname.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurname.Properties)).BeginInit();
@@ -218,6 +216,9 @@ namespace KantinPro
             this.txtSurname.Enabled = false;
             this.txtSurname.Location = new System.Drawing.Point(3, 24);
             this.txtSurname.Name = "txtSurname";
+            // 
+            // 
+            // 
             this.txtSurname.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSurname.Properties.Appearance.Options.UseFont = true;
             this.txtSurname.Size = new System.Drawing.Size(194, 42);
@@ -241,6 +242,9 @@ namespace KantinPro
             this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(3, 24);
             this.txtName.Name = "txtName";
+            // 
+            // 
+            // 
             this.txtName.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtName.Properties.Appearance.Options.UseFont = true;
             this.txtName.Size = new System.Drawing.Size(193, 42);
@@ -265,6 +269,9 @@ namespace KantinPro
             this.txtCardNumber.EditValue = "";
             this.txtCardNumber.Location = new System.Drawing.Point(103, 24);
             this.txtCardNumber.Name = "txtCardNumber";
+            // 
+            // 
+            // 
             this.txtCardNumber.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtCardNumber.Properties.Appearance.Options.UseFont = true;
             this.txtCardNumber.Size = new System.Drawing.Size(183, 42);
@@ -393,15 +400,14 @@ namespace KantinPro
             this.Controls.Add(this.topPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Islemler";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Islemler_Load);
             this.topPanel.ResumeLayout(false);
             this.sidePanel1.ResumeLayout(false);
             this.sidePanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelOgrenciler)).EndInit();
-            this.panelOgrenciler.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpFilter)).EndInit();
-            this.grpFilter.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grpSurname.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtSurname.Properties)).EndInit();

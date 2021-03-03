@@ -26,9 +26,12 @@ namespace KantinPro
         List<OGRENCILER> listOgrenciler;
         List<OGRENCILER> filteredOgrenciler;
 
-        public Islemler()
+        AnaMenu anamenu;
+
+        public Islemler(AnaMenu anamenu)
         {
             InitializeComponent();
+            this.anamenu = anamenu;
             db = SingletonContext.nesne();
             listOgrenciler = db.OGRENCILER.ToList();
             filteredOgrenciler = new List<OGRENCILER>();
@@ -41,6 +44,7 @@ namespace KantinPro
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            anamenu.Enabled = true;
             this.Close();
         }
 

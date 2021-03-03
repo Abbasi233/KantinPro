@@ -30,9 +30,11 @@ namespace KantinPro.Forms
         List<OGRENCILER> listOgrenciler;
         decimal tutar;
 
-        public Odeme(string tutar)
+        AnaMenu anamenu;
+        public Odeme(AnaMenu anamenu, string tutar)
         {
             InitializeComponent();
+            this.anamenu = anamenu;
 
             try
             {
@@ -47,7 +49,19 @@ namespace KantinPro.Forms
             listOgrenciler = dc.OGRENCILER.ToList();
         }
 
-        private void txtCardNumber_EditValueChanged(object sender, EventArgs e)
+        private void FormRefresh()
+        {
+            panelIslemTamamlandi.Visible = panelBakiyeYetersiz.Visible = false;
+            labelTutar.Text = "0,0 ₺";
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            anamenu.Enabled = true;
+            this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (txtCardNumber.Text.Length == 10)
             {
@@ -60,19 +74,8 @@ namespace KantinPro.Forms
                     panelBakiyeYetersiz.Visible = true;
 
 
-                txtCardNumber.Text = "";
+                txtCardNumber.Clear();
             }
-        }
-
-        private void FormRefresh()
-        {
-            panelIslemTamamlandi.Visible = panelBakiyeYetersiz.Visible = false;
-            labelTutar.Text = "0,0 ₺";
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
