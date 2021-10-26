@@ -1,5 +1,5 @@
 ﻿
-namespace KantinPro.Forms
+namespace KantinX.Forms
 {
     partial class Odeme
     {
@@ -30,111 +30,43 @@ namespace KantinPro.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Odeme));
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panelIslemTamamlandi = new DevExpress.XtraEditors.PanelControl();
-            this.panelBakiyeYetersiz = new DevExpress.XtraEditors.PanelControl();
-            this.labelTutar = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtCardNumber = new System.Windows.Forms.TextBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.topPanel = new System.Windows.Forms.Panel();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.panelIslemTamamlandi = new DevExpress.XtraEditors.PanelControl();
+            this.labelIslemTamamTutar = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.panelBakiyeYetersiz = new DevExpress.XtraEditors.PanelControl();
+            this.labelBakiyeYetersizTutar = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelIslemTamamlandi)).BeginInit();
             this.panelIslemTamamlandi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelBakiyeYetersiz)).BeginInit();
             this.panelBakiyeYetersiz.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            this.topPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // txtCardNumber
+            // 
+            this.txtCardNumber.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtCardNumber.Location = new System.Drawing.Point(40, 177);
+            this.txtCardNumber.Name = "txtCardNumber";
+            this.txtCardNumber.Size = new System.Drawing.Size(374, 39);
+            this.txtCardNumber.TabIndex = 0;
+            this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(43, 97);
+            this.labelControl1.Location = new System.Drawing.Point(40, 110);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(374, 35);
             this.labelControl1.TabIndex = 15;
             this.labelControl1.Text = "ÖDEME İÇİN KARTI OKUTUNUZ.";
-            // 
-            // panelIslemTamamlandi
-            // 
-            this.panelIslemTamamlandi.Controls.Add(this.panelBakiyeYetersiz);
-            this.panelIslemTamamlandi.Controls.Add(this.labelControl2);
-            this.panelIslemTamamlandi.Location = new System.Drawing.Point(43, 232);
-            this.panelIslemTamamlandi.Name = "panelIslemTamamlandi";
-            this.panelIslemTamamlandi.Size = new System.Drawing.Size(374, 66);
-            this.panelIslemTamamlandi.TabIndex = 18;
-            this.panelIslemTamamlandi.Visible = false;
-            // 
-            // panelBakiyeYetersiz
-            // 
-            this.panelBakiyeYetersiz.Controls.Add(this.labelTutar);
-            this.panelBakiyeYetersiz.Controls.Add(this.labelControl4);
-            this.panelBakiyeYetersiz.Location = new System.Drawing.Point(0, 0);
-            this.panelBakiyeYetersiz.Name = "panelBakiyeYetersiz";
-            this.panelBakiyeYetersiz.Size = new System.Drawing.Size(374, 66);
-            this.panelBakiyeYetersiz.TabIndex = 19;
-            this.panelBakiyeYetersiz.Visible = false;
-            // 
-            // labelTutar
-            // 
-            this.labelTutar.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelTutar.Appearance.Options.UseFont = true;
-            this.labelTutar.Location = new System.Drawing.Point(217, 16);
-            this.labelTutar.Name = "labelTutar";
-            this.labelTutar.Size = new System.Drawing.Size(58, 29);
-            this.labelTutar.TabIndex = 1;
-            this.labelTutar.Text = "0,0 ₺";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelControl4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl4.ImageOptions.Image")));
-            this.labelControl4.Location = new System.Drawing.Point(5, 16);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(192, 32);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "       BAKİYE YETERSİZ:";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelControl2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl2.ImageOptions.Image")));
-            this.labelControl2.Location = new System.Drawing.Point(78, 16);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(208, 32);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "       İŞLEM TAMAMLANDI";
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.panelControl1.Controls.Add(this.txtCardNumber);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.topPanel);
-            this.panelControl1.Controls.Add(this.panelIslemTamamlandi);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(463, 358);
-            this.panelControl1.TabIndex = 19;
-            // 
-            // txtCardNumber
-            // 
-            this.txtCardNumber.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtCardNumber.Location = new System.Drawing.Point(43, 164);
-            this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Size = new System.Drawing.Size(374, 39);
-            this.txtCardNumber.TabIndex = 20;
-            this.txtCardNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // topPanel
             // 
@@ -142,7 +74,7 @@ namespace KantinPro.Forms
             this.topPanel.Controls.Add(this.btnClose);
             this.topPanel.Controls.Add(this.labelControl3);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(2, 2);
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
             this.topPanel.Padding = new System.Windows.Forms.Padding(10);
             this.topPanel.Size = new System.Drawing.Size(459, 58);
@@ -179,43 +111,121 @@ namespace KantinPro.Forms
             this.labelControl3.TabIndex = 1;
             this.labelControl3.Text = "ÖDEME";
             // 
+            // panelIslemTamamlandi
+            // 
+            this.panelIslemTamamlandi.Controls.Add(this.labelIslemTamamTutar);
+            this.panelIslemTamamlandi.Controls.Add(this.labelControl5);
+            this.panelIslemTamamlandi.Controls.Add(this.labelControl2);
+            this.panelIslemTamamlandi.Location = new System.Drawing.Point(40, 234);
+            this.panelIslemTamamlandi.Name = "panelIslemTamamlandi";
+            this.panelIslemTamamlandi.Size = new System.Drawing.Size(374, 102);
+            this.panelIslemTamamlandi.TabIndex = 18;
+            this.panelIslemTamamlandi.Visible = false;
+            // 
+            // labelIslemTamamTutar
+            // 
+            this.labelIslemTamamTutar.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelIslemTamamTutar.Appearance.Options.UseFont = true;
+            this.labelIslemTamamTutar.Location = new System.Drawing.Point(199, 62);
+            this.labelIslemTamamTutar.Name = "labelIslemTamamTutar";
+            this.labelIslemTamamTutar.Size = new System.Drawing.Size(58, 29);
+            this.labelIslemTamamTutar.TabIndex = 2;
+            this.labelIslemTamamTutar.Text = "0,0 ₺";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(98, 65);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(95, 22);
+            this.labelControl5.TabIndex = 1;
+            this.labelControl5.Text = "Kalan Bakiye:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl2.ImageOptions.Image")));
+            this.labelControl2.Location = new System.Drawing.Point(81, 21);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(208, 32);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "       İŞLEM TAMAMLANDI";
+            // 
+            // panelBakiyeYetersiz
+            // 
+            this.panelBakiyeYetersiz.Controls.Add(this.labelBakiyeYetersizTutar);
+            this.panelBakiyeYetersiz.Controls.Add(this.labelControl4);
+            this.panelBakiyeYetersiz.Location = new System.Drawing.Point(40, 251);
+            this.panelBakiyeYetersiz.Name = "panelBakiyeYetersiz";
+            this.panelBakiyeYetersiz.Size = new System.Drawing.Size(374, 66);
+            this.panelBakiyeYetersiz.TabIndex = 19;
+            this.panelBakiyeYetersiz.Visible = false;
+            // 
+            // labelBakiyeYetersizTutar
+            // 
+            this.labelBakiyeYetersizTutar.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelBakiyeYetersizTutar.Appearance.Options.UseFont = true;
+            this.labelBakiyeYetersizTutar.Location = new System.Drawing.Point(217, 16);
+            this.labelBakiyeYetersizTutar.Name = "labelBakiyeYetersizTutar";
+            this.labelBakiyeYetersizTutar.Size = new System.Drawing.Size(58, 29);
+            this.labelBakiyeYetersizTutar.TabIndex = 1;
+            this.labelBakiyeYetersizTutar.Text = "0,0 ₺";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl4.ImageOptions.Image")));
+            this.labelControl4.Location = new System.Drawing.Point(5, 16);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(192, 32);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "       BAKİYE YETERSİZ:";
+            // 
             // Odeme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 358);
+            this.ClientSize = new System.Drawing.Size(459, 375);
             this.ControlBox = false;
-            this.Controls.Add(this.panelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.txtCardNumber);
+            this.Controls.Add(this.panelBakiyeYetersiz);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.panelIslemTamamlandi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Odeme";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Odeme";
+            this.topPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelIslemTamamlandi)).EndInit();
             this.panelIslemTamamlandi.ResumeLayout(false);
             this.panelIslemTamamlandi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelBakiyeYetersiz)).EndInit();
             this.panelBakiyeYetersiz.ResumeLayout(false);
             this.panelBakiyeYetersiz.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            this.topPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtCardNumber;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.PanelControl panelIslemTamamlandi;
-        private DevExpress.XtraEditors.PanelControl panelBakiyeYetersiz;
-        private DevExpress.XtraEditors.LabelControl labelTutar;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Panel topPanel;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private System.Windows.Forms.TextBox txtCardNumber;
+        private DevExpress.XtraEditors.PanelControl panelIslemTamamlandi;
+        private DevExpress.XtraEditors.LabelControl labelIslemTamamTutar;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.PanelControl panelBakiyeYetersiz;
+        private DevExpress.XtraEditors.LabelControl labelBakiyeYetersizTutar;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

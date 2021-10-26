@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KantinPro
+﻿namespace KantinX
 {
-    public static class extension
+    public static class Extension
     {
         public static string Format(this decimal value)
         {

@@ -1,4 +1,4 @@
-﻿namespace KantinPro
+﻿namespace KantinX
 {
     partial class Giris
     {
@@ -49,16 +49,18 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtSifre = new DevExpress.XtraEditors.TextEdit();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnMinimize = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupGirisControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSifre.Properties)).BeginInit();
             this.topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupGirisControl
@@ -308,6 +310,7 @@
             // 
             this.txtSifre.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSifre.Properties.Appearance.Options.UseFont = true;
+            this.txtSifre.Properties.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(164, 36);
             this.txtSifre.TabIndex = 1;
             this.txtSifre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSifre_KeyPress);
@@ -315,16 +318,30 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.LightGray;
+            this.topPanel.Controls.Add(this.labelControl3);
             this.topPanel.Controls.Add(this.btnMinimize);
             this.topPanel.Controls.Add(this.btnClose);
-            this.topPanel.Controls.Add(this.labelControl3);
-            this.topPanel.Controls.Add(this.simpleButton1);
+            this.topPanel.Controls.Add(this.labelBaslik);
+            this.topPanel.Controls.Add(this.pictureBox1);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
             this.topPanel.Padding = new System.Windows.Forms.Padding(10);
             this.topPanel.Size = new System.Drawing.Size(1364, 53);
             this.topPanel.TabIndex = 11;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 14.25F);
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl3.Location = new System.Drawing.Point(258, 10);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(54, 24);
+            this.labelControl3.TabIndex = 14;
+            this.labelControl3.Text = "| Giriş";
             // 
             // btnMinimize
             // 
@@ -340,6 +357,7 @@
             this.btnMinimize.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnMinimize.Size = new System.Drawing.Size(84, 33);
             this.btnMinimize.TabIndex = 13;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnClose
             // 
@@ -355,36 +373,33 @@
             this.btnClose.TabIndex = 12;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // labelControl3
+            // labelBaslik
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelControl3.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
-            this.labelControl3.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Vertical;
-            this.labelControl3.LineVisible = true;
-            this.labelControl3.Location = new System.Drawing.Point(94, 10);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(185, 24);
-            this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "KantinPro | Ana Menü";
+            this.labelBaslik.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelBaslik.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelBaslik.Appearance.Options.UseFont = true;
+            this.labelBaslik.Appearance.Options.UseForeColor = true;
+            this.labelBaslik.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelBaslik.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelBaslik.LineLocation = DevExpress.XtraEditors.LineLocation.Center;
+            this.labelBaslik.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Vertical;
+            this.labelBaslik.LineVisible = true;
+            this.labelBaslik.Location = new System.Drawing.Point(81, 10);
+            this.labelBaslik.Name = "labelBaslik";
+            this.labelBaslik.Size = new System.Drawing.Size(177, 24);
+            this.labelBaslik.TabIndex = 1;
+            this.labelBaslik.Text = "KantinX ";
             // 
-            // simpleButton1
+            // pictureBox1
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.LightGray;
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(10, 10);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(84, 33);
-            this.simpleButton1.TabIndex = 0;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::KantinX.Properties.Resources.KANTinSoft;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // Giris
             // 
@@ -396,17 +411,19 @@
             this.Controls.Add(this.topPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Giris";
-            this.Text = "KantinPro | Giriş";
+            this.Text = "KantinX | Giriş";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupGirisControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSifre.Properties)).EndInit();
             this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,11 +449,12 @@
         private DevExpress.XtraEditors.SimpleButton BtnGiris;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Panel topPanel;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnMinimize;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelBaslik;
         private DevExpress.XtraEditors.TextEdit txtUsername;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }
 

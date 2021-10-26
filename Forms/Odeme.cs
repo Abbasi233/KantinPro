@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
-using KantinPro.Database;
+using KantinX.Model;
+using RestSharp;
 
-namespace KantinPro.Forms
+namespace KantinX.Forms
 {
     public partial class Odeme : Form
     {
@@ -26,33 +21,29 @@ namespace KantinPro.Forms
             }
         }
 
-        KantinProDataContext dc;
-        List<OGRENCILER> listOgrenciler;
-        decimal tutar;
-
+        int KullaniciID;
+        decimal Tutar;
         AnaMenu anamenu;
-        public Odeme(AnaMenu anamenu, string tutar)
+
+        public Odeme(AnaMenu anamenu, int KullaniciID, string Tutar)
         {
             InitializeComponent();
-            this.anamenu = anamenu;
-
             try
             {
-                this.tutar = Convert.ToDecimal(tutar.Split(' ')[0]);
+                this.anamenu = anamenu;
+                this.KullaniciID = KullaniciID;
+                this.Tutar = Convert.ToDecimal(Tutar.Split(' ')[0]);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            dc = SingletonContext.nesne();
-            listOgrenciler = dc.OGRENCILER.ToList();
         }
 
         private void FormRefresh()
         {
             panelIslemTamamlandi.Visible = panelBakiyeYetersiz.Visible = false;
-            labelTutar.Text = "0,0 ₺";
+            labelBakiyeYetersizTutar.Text = "0,0 ₺";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -61,21 +52,82 @@ namespace KantinPro.Forms
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtCardNumber_TextChanged(object sender, EventArgs e)
         {
             if (txtCardNumber.Text.Length == 10)
             {
                 FormRefresh();
-                OGRENCILER ogrenci = listOgrenciler.Where(x => x.CARD_ID == txtCardNumber.Text).Single();
+                try
+                {
+                    List<ISLEM> listIslemler = new List<ISLEM>();
+                    OGRENCI ogrenci = GetOgrenci(txtCardNumber.Text);
 
-                if (ogrenci.BAKIYE >= tutar)
-                    panelIslemTamamlandi.Visible = true;
-                else
-                    panelBakiyeYetersiz.Visible = true;
+                    if (ogrenci.BAKIYE >= Tutar)
+                    {
+                        ogrenci.BAKIYE -= Tutar;
+                        labelIslemTamamTutar.Text = ogrenci.BAKIYE.Format();
 
+                        anamenu.listHesap.ForEach(x =>
+                        {
+                            ISLEM islem = new ISLEM();
+                            islem.ISLEM_YAPAN_ID = KullaniciID;
+                            islem.OGRENCI_ID = ogrenci.ID;
+                            islem.URUN_ID = x.ID;
+                            islem.ADET = x.Adet;
+                            islem.TOPLAM = x.ToplamFiyat;
+                            islem.ISLEM_TARIHI = DateTime.Now.AddHours(3);
 
+                            listIslemler.Add(islem);
+                        });
+
+                        var requestBody = new Dictionary<string, object>() {
+                            { "islem", "Satış"},
+                            { "body", listIslemler }
+                        };
+                        RestRequest postRequest = new RestRequest("setIslemler.php", Method.POST);
+                        postRequest.RequestFormat = DataFormat.Json;
+                        postRequest.AddJsonBody(SimpleJson.SerializeObject(requestBody));
+                        IRestResponse Response = anamenu.Client.Execute(postRequest);
+
+                        //if (!Response.IsSuccessful) NORMALDE ÇALIŞMASINA RAĞMEN SUCCESFUL FALSE DÖNÜYOR İNTERNAL SERVER ERROR VERİYOR
+                        if (Response.ErrorMessage != null)
+                        {
+                            MessageBox.Show(Response.ErrorMessage);
+                        }
+
+                        panelIslemTamamlandi.Visible = true;
+                        anamenu.labelTutar.Text = "0,0 ₺";
+                        anamenu.listHesap.Clear();
+                        anamenu.dgwHesap.Columns.Clear();
+                        anamenu.dgwHesap.DataSource = null;
+                    }
+                    else
+                    {
+                        labelBakiyeYetersizTutar.Text = ogrenci.BAKIYE.Format();
+                        panelBakiyeYetersiz.Visible = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 txtCardNumber.Clear();
             }
+        }
+
+        private OGRENCI GetOgrenci(string KartID)
+        {
+            anamenu.Request.Parameters.Clear();
+            anamenu.Request.Resource = "getOgrenciler.php";
+            anamenu.Request.AddParameter("kartID", KartID);
+            IRestResponse<List<OGRENCI>> Response = anamenu.Client.Execute<List<OGRENCI>>(anamenu.Request);
+
+            if (!Response.IsSuccessful)
+            {
+                MessageBox.Show(Response.ErrorMessage);
+                return null;
+            }
+            return Response.Data[0];
         }
     }
 }

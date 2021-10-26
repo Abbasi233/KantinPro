@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KantinPro.Properties {
+namespace KantinX.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,17 +20,6 @@ namespace KantinPro.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-OOQFRQL;Initial Catalog=KantinPro;Integrated Security=True;Co" +
-            "nnect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
-        public string KantinProConnectionString {
-            get {
-                return ((string)(this["KantinProConnectionString"]));
             }
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace KantinPro
+namespace KantinX
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace KantinPro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnaMenu());
+            Application.Run(new Giris());
         }
     }
 }
